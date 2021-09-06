@@ -7,8 +7,8 @@
 #define MAX_STRING_SIZE                 8000
 #define MAX_MSG_BUFFER                  100
 
-static string *msg_buffer = ({});
-static int written = 0;
+nosave string *msg_buffer = ({});
+nosave int written = 0;
 
 // status of written
 #define NONE                    0
@@ -21,7 +21,7 @@ static int written = 0;
 // function disable_message_log() to stop it. If the flag
 // has been set, after I call the receive_message to send
 // message to this object, I will call the function 
-static string log_in = 0;
+nosave string log_in = 0;
 
 // Should I be log ?
 int is_loging_now()

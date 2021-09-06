@@ -30,7 +30,7 @@ All rights reserved.
 	"dur":			3000,\
 ])
 
-static mapping MDESC_WEAPON = ([
+nosave mapping MDESC_WEAPON = ([
 	"hantie":         HIC"万年寒冰铁"NOR,
 	"xuantie":	  WHT"玄铁"NOR,
 	"shentie":        RED"万年神铁"NOR,
@@ -44,7 +44,7 @@ static mapping MDESC_WEAPON = ([
 	"default":        "精钢",
 ]);
 
-static mapping MDESC_ARMOR = ([
+nosave mapping MDESC_ARMOR = ([
 	"longcansi":      HIY"龙茧蚕丝"NOR,
 	"tiancansi":      WHT"天蚕丝"NOR,
 	"bingcansi":      HIW"冰蚕丝"NOR,
@@ -58,7 +58,7 @@ static mapping MDESC_ARMOR = ([
 	"default":        "布料",
 ]);
 
-static mapping	SPECIAL_B = ([
+nosave mapping	SPECIAL_B = ([
 	"imbued":	       5,
 	"material":	       "xuantie",
 	"wield_maxneili":      6500,
@@ -68,7 +68,7 @@ static mapping	SPECIAL_B = ([
 	"unwield_msg":	       HIG"\n$N将$n"HIG"随手一扔，只见$n"HIG"突然变得火红，化做无数的火星四散飘走了！\n"NOR,
 	"dur":                 5000,
 	]);
-static mapping	SUPER_B	= ([
+nosave mapping	SUPER_B	= ([
 	"imbued":	       4,
 	"material":	       "supersteel",
 	"sharpness":	       3,
@@ -80,7 +80,7 @@ static mapping	SUPER_B	= ([
 	"unwield_msg":	       HIW"\n$N将手中的$n"HIW"一弹，电光闪耀中，已不见了$n"HIW"的踪迹。\n"NOR,
 	"dur":                 4500,
 	]);
-static mapping	GREAT_B	= ([
+nosave mapping	GREAT_B	= ([
 	"imbued":	       3,
 	"material":	       "greatsteel",
 	"sharpness":	       2,
@@ -92,7 +92,7 @@ static mapping	GREAT_B	= ([
 	"unwield_msg":	       "\n$N将手中的$n放回了武器囊。\n",
 	"dur":                 3800,
 	]);
-static mapping	GOOD_B = ([
+nosave mapping	GOOD_B = ([
 	"imbued":	       2,
 	"material":	       "steel",
 	"sharpness":	       1,
@@ -103,7 +103,7 @@ static mapping	GOOD_B = ([
 	"dur":                 3350,
 	]);
 
-static mapping	WEAPON_MAP = ([
+nosave mapping	WEAPON_MAP = ([
 "sword"	: ([
 	"name":			"剑",
 	"basic_name":		"长",
@@ -239,7 +239,7 @@ static mapping	WEAPON_MAP = ([
 ]);
 
 
-static mapping	Special_Class =	([
+nosave mapping	Special_Class =	([
 RED"干将" : ([	"id": "ganjiang",
 		"long2"	: RED"干将威力无比，能开天辟地，荡妖除魔！\n"NOR,
 		"weapon_prop":         ([ "damage":70 ]),//180
@@ -305,7 +305,7 @@ RED"龙泉" : ([	"id": "longquan",
 		]),
 ]);
 
-static mapping	Super_Class = ([
+nosave mapping	Super_Class = ([
 	HIM"轩辕" : ([	"id":	"xuanyuan",
 			"long2": HIM"昔日黄帝持此物立于指南车上，驱迷雾，扫阴霾，率应龙旱魃，御百兽而战蚩尤！\n"NOR,
 		]),
@@ -368,7 +368,7 @@ static mapping	Super_Class = ([
 		]),
 ]);
 
-static mapping	Great_Class = ([
+nosave mapping	Great_Class = ([
 	CYN"帝王":	"diwang",	CYN"王者":	"wangzhe",
 	CYN"天后":	"tianhou",	CYN"霸王":	"bawang",
 	CYN"天圣":	"tiansheng",	CYN"神王":	"shenwang",
@@ -416,7 +416,7 @@ static mapping	Great_Class = ([
 	WHT"生死":	"shengsi",
 ]);
 
-static string *G_3_class = ({
+nosave string *G_3_class = ({
 	"春雨",	"夏雨",	"秋雨",	"冬雨",	"春兰",	"夏荷",	"秋菊",	"冬梅",
 	"玉泉",	"羽泉",	"风泉",	"虎泉",	"怒涛",	"江河",	"漩流",	"清水",
 	"巨",	"大",	"小",	"怪",	"阖",	"阔",	"宾",	"叠",
@@ -501,9 +501,9 @@ string s_power(int i)
 }
 
 // Important mapping for user_weapon.
-static mapping	mp;
-static string *special_st = ({});
-static string *name_st	= ({});
+nosave mapping	mp;
+nosave string *special_st = ({});
+nosave string *name_st	= ({});
 /////////////////////////// armors //////////////////////////////
 #define	USER_ARMOR	"clone/armor/us_armor"
 
@@ -527,7 +527,7 @@ static string *name_st	= ({});
         "canwear":                "",\
 ])
 
-static mapping	ARMOR_SPECIAL_B = ([
+nosave mapping	ARMOR_SPECIAL_B = ([
 	"imbued":		5,
 	"wear_maxneili":	6500,
 	"wear_con":		50,
@@ -535,7 +535,7 @@ static mapping	ARMOR_SPECIAL_B = ([
 	"max_dur":		3000,
 	"times":		450,
 	]);
-static mapping	ARMOR_SUPER_B	= ([
+nosave mapping	ARMOR_SUPER_B	= ([
 	"imbued":		4,
 	"wear_maxneili":	5000,
 	"wear_con":		39,
@@ -543,7 +543,7 @@ static mapping	ARMOR_SUPER_B	= ([
 	"max_dur":		2800,
 	"times":		350,
 	]);
-static mapping	ARMOR_GREAT_B	= ([
+nosave mapping	ARMOR_GREAT_B	= ([
 	"imbued":		3,
 	"wear_maxneili":	3500,
 	"wear_con":		32,
@@ -551,7 +551,7 @@ static mapping	ARMOR_GREAT_B	= ([
 	"times":		250,
 	"max_dur":		2500,
 	]);
-static mapping	ARMOR_GOOD_B = ([
+nosave mapping	ARMOR_GOOD_B = ([
 	"imbued":		2,
 	"wear_maxneili":	1500,
 	"wear_con":		26,
@@ -560,7 +560,7 @@ static mapping	ARMOR_GOOD_B = ([
 	"max_dur":		2250,
 	]);
 
-static mapping	ARMOR_MAP = ([
+nosave mapping	ARMOR_MAP = ([
 "cap"	: ([
 	"name":			"头盔",
 	"armor_type":		TYPE_HEAD,
@@ -612,7 +612,7 @@ static mapping	ARMOR_MAP = ([
 	"weight":		4000,]),
 ]);
 
-static mapping	Armor_Special_Class =	([
+nosave mapping	Armor_Special_Class =	([
 	"cap":	([
 		YEL"青龙头盔"NOR : ([
 			"id":		"qinglong toukui",
@@ -814,7 +814,7 @@ static mapping	Armor_Special_Class =	([
 		]),
 ]);
 
-static mapping	Armor_Super_Class = ([
+nosave mapping	Armor_Super_Class = ([
 	HIM"紫霞" : ([	"id":	"zixia",
 			"long2": HIM"紫霞功乃华山派镇山之宝，是华山派修炼内丹的快速功法，
 为长生不老之仙术，亦为道家之无上玄功，功成“罡气”
@@ -951,7 +951,7 @@ WHT"求败" : ([	"id":	"qiubai",
 
 ]);
 
-static mapping	Armor_Great_Class = ([
+nosave mapping	Armor_Great_Class = ([
 	CYN"帝王":	"diwang",	CYN"王者":	"wangzhe",
 	CYN"天后":	"tianhou",	CYN"霸王":	"bawang",
 	CYN"天圣":	"tiansheng",	CYN"神王":	"shenwang",
@@ -999,7 +999,7 @@ static mapping	Armor_Great_Class = ([
 	WHT"生死":	"shengsi",
 ]);
 
-static string *Armor_G_3_class = ({
+nosave string *Armor_G_3_class = ({
 	"春雨",	"夏雨",	"秋雨",	"冬雨",	"春兰",	"夏荷",	"秋菊",	"冬梅",
 	"玉泉",	"羽泉",	"风泉",	"虎泉",	"怒涛",	"江河",	"漩流",	"清水",
 	"巨",	"大",	"小",	"怪",	"阖",	"阔",	"宾",	"叠",
@@ -1041,7 +1041,7 @@ static string *Armor_G_3_class = ({
 	"聚泉",
 });
 
-static mapping armor_modify = ([
+nosave mapping armor_modify = ([
 	"cap":17,
 	"glove":20,
 	"coat":6,
@@ -1111,7 +1111,7 @@ string armor_power(mapping p,string type)
 	return CYN"一般"NOR;
 }
 ///////////////////Status/////////////////////////////////////////
-static mapping Status_list = ([
+nosave mapping Status_list = ([
 	"jingli":      5,
 	"jing":        5,
 	"neili":       8,	
@@ -1193,19 +1193,19 @@ string ask_imbue(string type)
 	return str;
 }
 
-static string spe_name=" ";
-static string jade_show=" ";
-static string item_show=" ";
-static int is_prop=0;
-static int is_sure=0;
-static string add_type=" ";
-static int add_use=1;
-static string add_numa="";
-static float add_numb=0;
-static string can_wield=" ";
-static string just_for=" ";
-static int if_next=0;
-static int status_type=0;//无任何冲突
+nosave string spe_name=" ";
+nosave string jade_show=" ";
+nosave string item_show=" ";
+nosave int is_prop=0;
+nosave int is_sure=0;
+nosave string add_type=" ";
+nosave int add_use=1;
+nosave string add_numa="";
+nosave float add_numb=0;
+nosave string can_wield=" ";
+nosave string just_for=" ";
+nosave int if_next=0;
+nosave int status_type=0;//无任何冲突
 
 int status_armor_lists(int i,int t)
 {	

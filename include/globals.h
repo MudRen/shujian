@@ -3,7 +3,7 @@
 
 // globals.h
 // this file will be automatically included by the driver
-#define private protected
+// #define private protected
 #define TIME_TICK (time()*60)
 
 #ifndef __SENSIBLE_MODIFIERS__ 
@@ -76,7 +76,7 @@
 #define QUEST_D     "/adm/daemons/questd"
 #define TASKREWARD_D "/adm/daemons/jobrewardd"
 
-//只是为了新任务系统
+//只锟斤拷为锟斤拷锟斤拷锟斤拷锟斤拷系统
 #define JOB_SERVER 	"/clone/obj/job_server"
 #define TRAVERSER  	"/clone/obj/traverser"
 #define MAPDB 	   	"/clone/obj/mapdb"

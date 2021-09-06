@@ -46,7 +46,7 @@ mapping group = ([ ]);				// 需要保存的帮派数据
 mapping group_temp = ([ ]);			// 临时性帮派数据，主要是战斗数据
 mapping group_member = ([ ]);		// 帮派成员数据，也要保存
 string *group_list = ({ });			// 帮派名字列表
-static string last_error = "";		// 最后的错误
+nosave string last_error = "";		// 最后的错误
 
 
 void setup_group();
@@ -202,7 +202,7 @@ int load_group(string gid)
 	return 1;
 }
 
-static string resstr;
+nosave string resstr;
 public void set_res(string str)
 {
 	if(!str) return;
@@ -1649,9 +1649,9 @@ void check_user_group(object me)
 #define FLAG_FILE	"/d/group/obj/biaozhi"	// 牌匾文件
 #define CASHBOX_FILE	"/d/group/obj/qiangui"	// 钱柜文件
 
-static int tick_count = 0;
-static int group_check_flag = 0;		// 帮派检查步骤标记
-static string * group_check_array = ({ });
+nosave int tick_count = 0;
+nosave int group_check_flag = 0;		// 帮派检查步骤标记
+nosave string * group_check_array = ({ });
 
 // 在检查开始时，把所有的在帮派区域里的用户移出去
 protected void move_group_member_out()

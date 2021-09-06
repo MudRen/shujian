@@ -5,7 +5,7 @@
 
 varargs void interrupt_me(object who, string how);
 
-static mixed busy, interrupt, bqueue;
+nosave mixed busy, interrupt, bqueue;
 
 void add_busy(int new_busy)
 {
@@ -43,8 +43,8 @@ varargs void start_busy(mixed new_busy, mixed new_interrupt)
 nomask mixed query_busy() { return busy; }
 nomask int is_busy() { return busy; }
 
-static int exert_time;
-static string exert_type = "内功";
+nosave int exert_time;
+nosave string exert_type = "内功";
 
 varargs void start_exert(int new_exert, string new_type)
 {
@@ -60,9 +60,9 @@ varargs void start_exert(int new_exert, string new_type)
 nomask string query_exert() { return exert_type; }
 nomask int is_exert() { return exert_time; }
 
-static int perform_time;
-static int perform_nohalt_time;
-static string perform_type = "外功";
+nosave int perform_time;
+nosave int perform_nohalt_time;
+nosave string perform_type = "外功";
 
 varargs void start_perform(int new_perform, string new_type)
 {
@@ -80,7 +80,7 @@ nomask string query_perform() { return perform_type; }
 nomask int is_perform() { return perform_time; }
 nomask int is_nohalt() { return perform_nohalt_time; }
 
-static int lost_time;
+nosave int lost_time;
 
 varargs void start_lost(int new_lost)
 {
@@ -94,7 +94,7 @@ nomask int is_lost() { return lost_time; }
 
 // This is called by heart_beat() instead of attack() when a ppl is busy
 // doing something else.
-private void continue_action()
+protected void continue_action()
 {
 	if (intp(busy) && (busy > 0)) busy--;
 	else if (functionp(busy)) {
@@ -125,7 +125,7 @@ private void continue_action()
 	}
 }
 
-static int flag;
+nosave int flag;
 
 varargs void interrupt_me(object who, string how)
 {
@@ -172,4 +172,4 @@ int start_call_out(function fun, int delay)
 	return 1;
 }
 
-private void eval_function(function fun) { evaluate(fun); }
+protected void eval_function(function fun) { evaluate(fun); }

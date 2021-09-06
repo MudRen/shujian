@@ -71,7 +71,7 @@ void send_msg(string channel, string id, string name, string msg, int emoted)
 		}
 }
 
-static mapping user_info;
+nosave mapping user_info;
 
 void incoming_request(mapping info)
 {

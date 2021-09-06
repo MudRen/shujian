@@ -40,8 +40,8 @@ inherit F_LINEUP;
 // Use a tick with longer period than heart beat to save cpu's work
 nosave int tick;
 nosave int save = 15 + random(15);
-// static int exp_tick = 1;
-// static int exp = 0;
+// nosave int exp_tick = 1;
+// nosave int exp = 0;
 
 void create()
 {

@@ -6,7 +6,7 @@
 #include <condition.h>
 
 mapping conditions;
-static mapping type_conditions;
+nosave mapping type_conditions;
 
 // This function is called by heart_beat to update "continously active"
 // conditions. These conditions will be saved as well. Because such type

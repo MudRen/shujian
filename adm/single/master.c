@@ -121,18 +121,23 @@ void preload(string file)
 // 'file', giving the error message 'message'.
 void log_error(string file, string message)
 {
-	string name, home;
-   
-	if( find_object(SIMUL_EFUN_OB) )
-		name = file_owner(file);
-
-	if (name) home = user_path(name);
-	else home = LOG_DIR;
-
-//    if(this_player(1) && wizardp(this_player(1))) efun::write("±àÒëÊ±¶Î´íÎó£º" + message+"\n");
-
-//	efun::write_file(home + "log", message);
-//	CHANNEL_D->do_channel(this_object(), "err", message);
+    if (strsrch(message, "Warning") == -1)
+    {
+        if (this_player(1))
+        {
+            if (wizardp(this_player(1)))
+                efun::write("±àÒëÊ±¶Î´íÎó£º" + message + "\n");
+            else
+                ;// efun::write(get_config(__DEFAULT_ERROR_MESSAGE__) + "\n");
+        }
+        // ¼ÇÂ¼´íÎóÈÕÖ¾
+        efun::write_file(LOG_DIR + "log_error", message);
+    }
+    else
+    {
+        // ¼ÇÂ¼¾¯¸æÈÕÖ¾
+        efun::write_file(LOG_DIR + "log", message);
+    }
 }
 
 // save_ed_setup and restore_ed_setup are called by the ed to maintain
@@ -241,19 +246,21 @@ string standard_trace(mapping error, int caught)
     return res;
 }
 
-// The mudlib runtime error handler.
-string error_handler( mapping error, int caught )
+void error_handler(mapping error, int caught)
 {
-    if (this_player(1)) {
+    string trace = standard_trace(error, caught);
+    if (this_player(1))
+    {
         this_player(1)->set_temp("error", error);
-	if (wizardp(this_player(1)))
-	        tell_object(this_player(1), standard_trace(error, caught));
-	else
-		tell_object(this_player(1), get_config(11)+"\n");
+        tell_object(this_player(1), trace);
     }
+    else if (this_player())
+        tell_object(this_player(), trace);
 
+    trace += "[" + ctime() + "]";
+    trace += sprintf("\n%O\n", error);
     // whatever we return goes to the debug.log
-    return standard_trace(error, caught);
+    efun::write_file(LOG_DIR + "error_handler", trace);
 }
 
 // valid_shadow: controls whether an object may be shadowed or not

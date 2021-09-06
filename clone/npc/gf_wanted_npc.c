@@ -161,7 +161,7 @@ void copy_random_player(object *all)
         }
 }
 
-static int init_flag = 0;
+nosave int init_flag = 0;
 
 void init()
 {

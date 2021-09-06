@@ -49,8 +49,8 @@ int armor_rank(object wp);
 //int addto_pool(string pool,string id,string var);
 /////////////////////////////////////////////////////////////////////
 
-static int imbue_sta = 0;
-static string imbue = "";
+nosave int imbue_sta = 0;
+nosave string imbue = "";
 
 int sum(int n,int d)
 {
@@ -580,8 +580,8 @@ object make_weapon(object me, mixed type, int qua, string material,mapping shuxi
 
 // type	= weapon types.
 // qua:	0 = normal, 1 =	good, 2	= great, 3 = super
-static int debug_mode = 0;
-static float tick_count2 = 1.0;
+nosave int debug_mode = 0;
+nosave float tick_count2 = 1.0;
 protected mapping make_user_weapon_random(object me,string type, int qua, string material,mapping shuxing,string* status)
 {
 	string wp_name,	name;

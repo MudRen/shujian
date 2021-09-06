@@ -8,10 +8,10 @@ inherit F_CLEAN_UP;
 #include <mudlib.h>
 #include <group.h>
 
-static string * valid_group_name = ({ "帮","会","门","派","楼","山","教","岛","宫","盟","谷","馆","观","院","堡","园","店",
+nosave string * valid_group_name = ({ "帮","会","门","派","楼","山","教","岛","宫","盟","谷","馆","观","院","堡","园","店",
 				      "坊","阁","堂","舵","洞","寺","源","庙","庄","族","团", "府", "寨", "组","城" });				      
-static string * invalid_group_name = ({ "丐帮","武当派","少林派" });
-static string * invalid_group_id = ({ "obj","npc","entry" });
+nosave string * invalid_group_name = ({ "丐帮","武当派","少林派" });
+nosave string * invalid_group_id = ({ "obj","npc","entry" });
 
 int help(object me)
 {

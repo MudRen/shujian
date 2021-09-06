@@ -64,7 +64,7 @@ private mapping seq_entries;
 // Used for debugging
 #ifdef DEBUG
 #  define debug(x) if(monitor) message("diagnostic", (x), monitor)
-static object monitor = 0;
+nosave object monitor = 0;
 #else
 #  define debug(x)
 #endif

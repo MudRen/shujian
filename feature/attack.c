@@ -9,8 +9,8 @@
 
 #define MAX_OPPONENT 4
 
-static object *enemy = ({});
-static string *killer = ({});
+nosave object *enemy = ({});
+nosave string *killer = ({});
 
 // prototypes
 
