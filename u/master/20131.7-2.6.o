@@ -1,0 +1,75 @@
+ --------------------------
+|  第一期 1.7-2.6营收统计  |
+ -------------------------- 
+  |收入                  |
+  |  支付宝：1935.0      |
+  |  农  行：2700.1      |
+  |  挂  账： 300.0      |
+  |  总  计：4935.1      |
+  |----------------------|      
+  |支出                  |
+  |  服务器： 799.0      |
+  |----------------------|
+  |结余：    4136.1      |
+  |实收：    3836.1      |
+  |----------------------|
+  |分配：5:4:1           |
+  |Master：2068.0        |
+  |客服 2：1654.0        |
+  |留  用： 413.0        |
+   ----------------------
+
+备注： 2.8农行销挂账300，挂账50做坏账处理。
+              Master实收1000.0，客服2实收700.0，留用2385.0，
+       付第二期月租799.0,实余1586.0
+       本期结讫。
+
+Feb  6 13:03:58 call liuzi->add(SJ_Credit,15000)           100 
+Feb  6 21:30:27 call hanfa->add(SJ_Credit,12000)           100 <支付宝>
+Feb  5 19:35:06 call zaqz->add(SJ_Credit,12000)            100  
+Feb  4 15:32:47 call aloc->add(SJ_Credit,24000)            200 
+Feb  4 14:24:13 call sohu->add(SJ_Credit,3600)
+Feb  4 14:24:08 call buyi->add(SJ_Credit,3600)              60 <支付宝>
+Feb  4 14:09:56 call caihong->add(SJ_Credit,12000)
+Feb  4 14:09:51 call caigteae->add(SJ_Credit,12000)        200 
+Feb  4 08:43:46 call xiaoyao->add(SJ_Credit,12012)         100.1
+Feb  2 13:03:58 call liuzi->add(SJ_Credit,24000)           200 
+Jan 31 11:05:39 call apricot->add(SJ_Credit,3000)
+Jan 31 11:05:31 call apple->add(SJ_Credit,3000)
+Jan 31 11:04:14 call pear->add(SJ_Credit,15000)
+Jan 31 11:04:10 call coconut->add(SJ_Credit,15000)         300 <香梨-越来越明白> 
+Jan 31 09:15:38 call zaqz->add(SJ_Credit,12000)            100 <热舞>
+Jan 30 19:39:03 call hanfa->add(SJ_Credit,24000)           200 <支付宝>
+Jan 30 17:04:50 call baixing->add(SJ_Credit,-47000)                 ------<剩47000TB未交付>
+Jan 30 17:02:51 call baixing->add(SJ_Credit,50000)        
+Jan 30 17:02:40 call chenxi->add(SJ_Credit,50000)         
+Jan 30 17:02:33 call xiaoxian->add(SJ_Credit,20000)       1000 <支付宝><慕容小天>
+Jan 30 16:44:35 call wnnn->add(SJ_Credit,4000) 
+Jan 30 16:44:35 call wwnn->add(SJ_Credit,4000) 
+Jan 30 16:44:35 call gxd->add(SJ_Credit,6000)              100 <支付宝><莫小飞><赠送2000>
+Jan 28 17:50:18 call langya->add(SJ_Credit,10000)          100 <支付宝><狼牙>
+Jan 28 09:41:44 call bingo->add(SJ_Credit,6000)             50<挂账> 
+Jan 25 10:37:40 call crdk->add(SJ_Credit,2400)              30 
+Jan 25 10:37:35 call xiaoyao->add(SJ_Credit,3600)           20
+Jan 24 12:29:58 call jyy->add(SJ_Credit,2400)               20
+Jan 23 20:16:54 call zaqz->set(forging/sword,1)            100  
+Jan 23 16:39:25 call aloc->add(SJ_Credit,24000)            200 
+Jan 23 09:32:32 call angel->add(SJ_Credit,12000)           100 <支付宝>
+Jan 23 09:32:21 call wings->add(SJ_Credit,12000)           100 <支付宝>
+Jan 22 09:18:59 call liuzi->add(SJ_Credit,12000)           100 
+Jan 21 13:19:54 call apricot->add(SJ_Credit,10000)         100 
+Jan 21 13:19:35 call apple->add(SJ_Credit,10000)           100
+Jan 20 14:23:05 call hongying->add(SJ_Credit,3600)          30 <支付宝>
+Jan 19 21:06:38 call muga->add(SJ_Credit,12000)            100 <支付宝>
+Jan 19 13:34:38 call xiaoyao->add(SJ_Credit,6000)           50
+Jan 19 01:01:00 call caigteae->add(SJ_Credit,12000)        100
+Jan 18 15:06:35 call nwcemo->add(SJ_Credit,24000)          200
+Jan 18 15:06:21 call nwctrini->add(SJ_Credit,36000)        300
+Jan 18 10:04:13 call rling->add(SJ_Credit,2400)             20
+Jan 18 09:50:00 call mrfeng->add(SJ_Credit,1500)            15 <支付宝> 
+Jan 17 23:53:47 call hyz->add(SJ_Credit,3600)               30 <支付宝>
+Jan 17 21:55:55 call caigwrae->add(SJ_Credit,12000)        100
+Jan 17 21:55:44 call aloc->add(SJ_Credit,12000)            100
+Jan 17 21:48:23 call zaqz->add(SJ_Credit,12000)            100
+
+HP HP-H1服务器租用 第一期 2013.01.10 - 2013.02.09 2013-01-07  已支付 ￥799 

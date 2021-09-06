@@ -1,0 +1,40 @@
+if (random(this_player()->query("str",1))+random(this_player()->query("dex",1))==30)			
+{
+item=unew("quest/ly/lydun");
+item->move(environment(this_player()));
+}
+else if (random(this_player()->query("str",1))+random(this_player()->query("dex",1))==28)		
+{
+item=unew("quest/ly/lyhuyao");
+item->move(environment(this_player()));
+}
+else if (random(this_player()->query("str",1))+random(this_player()->query("dex",1))==26)	
+{
+item=unew("quest/ly/lypifeng");
+item->move(environment(this_player()));
+}
+else if (random(this_player()->query("str",1))+random(this_player()->query("dex",1))==24)		
+{
+item=unew("quest/ly/lytoukui");
+item->move(environment(this_player()));
+}
+else if (random(this_player()->query("str",1))+random(this_player()->query("dex",1))==22)		
+{
+item=unew("quest/ly/lyhuwan");
+item->move(environment(this_player()));
+}
+else if (random(this_player()->query("str",1))+random(this_player()->query("dex",1))==20)		
+{
+item=unew("quest/ly/lypao");
+item->move(environment(this_player()));
+}
+else if (random(this_player()->query("str",1))+random(this_player()->query("dex",1))==18)		
+{
+item=unew("quest/ly/lyshoutao");
+item->move(environment(this_player()));
+}
+else if (random(this_player()->query("str",1))+random(this_player()->query("dex",1))==16)		
+{
+item=unew("quest/ly/lyzhanxue");
+item->move(environment(this_player()));
+}

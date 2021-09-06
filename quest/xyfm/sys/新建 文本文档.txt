@@ -1,0 +1,42 @@
+varargs void make_jjkiller(object player,int jjboss)
+{
+	int i,size,killer_level=0,all_level=0,all_exp=0,killer_exp=0;
+	object killer,memory,rand_map;
+	mapping maps;
+
+	if(!player) return;
+
+	memory = (object)player->query_temp("mirror/mirror_memory");
+	if(!memory) return; //防抱错
+	//放置主动攻击NPC
+	if(!boss) i = MAX_KILLER_INDEX;
+	else i = 1;
+
+	while(i--)
+	{
+		if(memory->query("npc_amount",1) >= 201 ) break;	
+		if(!jjboss)
+		{
+			if(killer = new(KILLER_NPC))
+			{
+				memory->add("npc_amount",1);
+				maps = memory->query("maps");
+				size = sizeof(maps);
+				rand_map = (object)maps[sprintf("%d",random(size))];  //随机地图
+
+				killer->move(rand_map);
+			}
+		}
+		else
+		{
+			if(killer = new(JJBOSS_NPC))
+			{
+				memory->add("npc_amount",1);
+				maps = memory->query("maps");
+				rand_map = (object)maps[sprintf("%d",random(size))];  //随机地图
+
+				killer->move(rand_map);
+			}
+		}
+	}
+}

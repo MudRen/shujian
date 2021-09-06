@@ -1,0 +1,57 @@
+Îä¹¦ÎÄ¼şµÄº¯Êı½Ó¿ÚËµÃ÷:
+int valid_enable(string usage);
+	±» enalbe, jifa ÃüÁîµ÷ÓÃ
+	usage ÊÇ»ù±¾Îä¹¦µÄÓ¢ÎÄÃû³Æ
+	Èç¹û¸ÃÎä¹¦ÊÇ usage µÄÌØÊâÎä¹¦Ôò·µ»Ø 1
+
+int valid_combine(string combo);
+	±» prepare, bei ÃüÁîµ÷ÓÃ
+	Ö»³öÏÖÔÚÈ­½ÅÎä¹¦ÖĞ
+	combo ÊÇÁíÒ»ÖÖÌØÊâÎä¹¦µÄÓ¢ÎÄÃû³Æ
+	Èç¹û¸ÃÎä¹¦¿ÉÒÔºÍ combo Ò»ÆğÊ¹ÓÃÔò·µ»Ø 1
+
+int valid_learn(object me);
+	±» learn, xue, pratice, lian µ÷ÓÃ
+	me ÊÇÍæ¼ÒµÄ±àºÅ
+	Èç¹ûÍæ¼Ò·ûºÏÑ§Ï°¸ÃÎä¹¦µÄÌõ¼şÔò·µ»Ø 1
+
+int practice_skill(object me);
+	±» pratice, lian µ÷ÓÃ, µ÷ÓÃË³ĞòÔÚ valid_learn Ö®ºó
+	Èç¹û valid_lean ·µ»Ø 0 Ôò¸Ãº¯Êı²»»á±»µ÷ÓÃµ½
+	Ò»°ãÔÚ¸Ãº¯ÊıÖĞ¶ÔÍæ¼ÒÃ¿Ò»´ÎÁ·Ï°ËùĞèµÄÏûºÄ½øĞĞ¿Û³ı
+	Èç¹ûÍæ¼Ò·ûºÏÁ·Ï°¸ÃÎä¹¦µÄÌõ¼şÔò·µ»Ø 1
+	[1;33mĞÂ¸Ä¶¯£º·µ»ØÖµÎª 1 ±íÊ¾°´ÀÏ±ê×¼Ìá¸ßÎä¹¦[0;37;0m
+	[1;33m·µ»ØÖµ > 1 ±íÊ¾°´·µ»ØÖµÌá¸ßÎä¹¦[0;37;0m
+
+string query_skill_name(int level);
+	·µ»Ø¼¶±ğ level Ê±µÄÕĞÊ½Ãû³Æ
+
+mapping query_action(object me, object weapon);
+	±»Õ½¶·ÏµÍ³µ÷ÓÃ
+	¹¥»÷ĞÔÎä¹¦ÌØÓĞµÄº¯Êı
+	·µ»ØÖµ²»ÄÜÎª¿Õ, ·ñÔòÕ½¶·¾«Áé»á±¨´íÎó
+	·µ»ØÖµµÄº¬ÒåÊÇ
+	([
+		"action": "...",	// ÕĞÊ½µÄÃèÊö
+		"dodge" : xxx,		// ÕâÒ»ÕĞ¶Ô½ÓÏÂÀ´·ÀÓùÁ¦µÄÓ°Ïì
+		"damage": xxx,		// Ò»°ãÖ»ÓĞÎäÆ÷ĞÔÎä¹¦²ÅÓĞ
+					// ¸ÃÖµÒªºÍÎäÆ÷µÄÉËº¦Á¦ÔËËã
+		"force" : xxx,		// ¸ÃÖµÒªºÍ½ø¹¥·½µÄºóÌìëöÁ¦ÔËËã
+		"damage_type": "...",	// ÉËº¦ÀàĞÍµÄÖĞÎÄÃû³Æ
+	])
+	ÒÔÉÏÖµÊÇ¹©ÏµÍ³µ÷ÓÃµÄ, Îä¹¦ÎÄ¼şÀï¿ÉÒÔÁíÍâ¶¨ÒåÆäËüĞèÒªµÄ²ÎÊı
+
+string query_dodge_msg(object me);
+	·µ»ØÖµÊÇÇá¹¦µÄÃèÊö
+
+string perform_action_file(string action);
+	±» perform ÃüÁîµ÷ÓÃ
+	action ÊÇ perform ÃüÁîËù¸úµÄ²ÎÊı
+	·µ»ØÖµÊÇÖ´ĞĞ¸Ã perform µÄÎÄ¼şÃû
+
+mixed hit_ob(object me, object victim, int damage_bonus);
+	Ê¹ÓÃ¸ÃÎä¹¦»÷ÖĞÄ¿±êÊ±±»µ÷ÓÃ
+	me ÊÇ¹¥·½, victim ÊÇ±»»÷ÖĞµÄÄ¿±ê, damage_bonus ÊÇÄ¿±êÒÑ¾­ÊÜµ½
+	ÉËº¦µÄµãÊı
+	·µ»ØÖµÈç¹ûÊÇ string ÀàĞÍ, »áÏÔÊ¾ÔÚ¹¥»÷ÃèÊöÖ®ºó
+	·µ»ØÖµÈç¹ûÊÇ int ÀàĞÍ, »á¼Óµ½ damage_bonus ÖĞ

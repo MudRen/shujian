@@ -1,0 +1,2 @@
+#/cmds/std/vote.c
+vote (["time":0,"desc":"","choice":(["1":"同意","2":"反对",]),"votes":(["同意":0,"反对":0,]),"valid":0,"total":0,"num":0,])

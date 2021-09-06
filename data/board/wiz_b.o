@@ -1,0 +1,2 @@
+#/clone/board/wiz_b.c
+dbase (["board_id":"wiz_b","no_get":1,"location":"/d/wizard/wizard_room","id":"board","capacity":999,"notes":({}),"name":"巫师留言簿","long":"这是一个专供巫师使用的留言板。","no_sac":1,])

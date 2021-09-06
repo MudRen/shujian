@@ -1,0 +1,17 @@
+#include <ansi.h>
+inherit ITEM;
+inherit F_FOOD;
+void create()
+{
+	set_name(MAG"Ã¢¹û"NOR, ({"mang guo", "manguo"}));
+	set_weight(80);
+	if (clonep())
+		set_default_object(__FILE__);
+	else {
+		set("long", "Ò»µú»Æ³Î³ÎµÄÃ¢¹û¡£ÏãÆøÆË±Ç¡£\n");
+		set("unit", "µú");
+		set("value", 50);
+		set("food_remaining", 3);
+		set("food_supply", 20);
+	}
+}

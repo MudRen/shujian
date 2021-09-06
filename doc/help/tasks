@@ -1,0 +1,123 @@
+©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+¡¼ ¡ò  Êé½£IIÉñÊé°ñ ¡½                                      
+©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+      Êé½£II²ÉÓÃÐÂµÄTASKÏµÍ³£¬Óë±ðµÄMUDÓÐËù²»Í¬¡£
+µ±ÄãÊäÈëtaskÕâ¸öÖ¸Áîºó£¬Äã»á¿´µ½Ò»Á¬´®µÄÊ¹Ãü¡£ Èç¹û
+Ò»¸öÊ¹ÃüºóÓÐ£¨ÒÑÍê³É£©µÄ×ÖÑù¾ÍËµÃ÷ÕâÏîÊ¹ÃüÒÑ¾­±»Íæ¼Ò
+ËùÍê³É¡£µ±Äã¶ÔÒ»¸öÎ´Íê³ÉµÄÊ¹Ãü¸ÐÐËÈ¤µÄ»°£¬¾Í¿ÉÒÔ¿ªÊ¼
+¶ÔËüµÄËÑË÷¡£
+
+
+±ÈÈçÄã¶ÔÆäÖÐµÄÒ»¸öÊ¹Ãü¡°Ãð¾øÊ¦Ì«µÄÉñµñÏÀÂÂ£¨sdxl£©¡±¸Ð
+ÐËÈ¤µÄ»°£¬Äã¿ÉÒÔÓÃlocateÃüÁîÀ´Ñ°ÕÒÕâ¸öÈÎÃüËüµÄ´ó¸ÅÎ»ÖÃ.
+ÄãÊäÈëlocate sdxl¿ÉÄÜ³öÀ´ÒÔÏÂ3ÖÖÇé¿ö£º
+1.È·¶¨²»ÁËsdxlµÄ´ó¸ÅÎ»ÖÃ¡£
+ËµÃ÷ÉñµñÏÀÂÂÒÑ¾­±»ÈËÍê³ÉÁË£¬¾Í²»ÄÜÔÙ×öÁË¡£
+2.¡ºÉñµñÏÀÂÂ¡»ËÆºõÔÚ³É¶¼³ÇµÄÎ÷ÃÅ¸½½ü
+ËµÃ÷ÉñµñÏÀÂÂÕâ±¾ÊéÔÚ¸Ã´¦£¬Äã¿ÉÒÔµ½³É¶¼³ÇµÄÎ÷ÃÅ¸½½üÕÒÕÒ¡£
+
+  ÕÒµ½¸ÃÊéºó£¬ÄãÖ»ÐèÒª½«Ëü´ø»¹¸øÐ¡ÁúÅ®¾Í¿ÉÒÔµÃµ½½±Àø¡£
+Áí£º¡°¸½½ü¡±µÄ¸ÅÄîÊÇÖÜÎ§9¸ñ£¬Ò²¾ÍÊÇÒ»¸ö·½Ïò×î¶à3¸ñ¡£
+ÁíÍâÔÚ42±¾ÊéÖÐ£¬ÓÐÐ©ÊéÊÇ¿ÉÒÔºÏ²¢µÄ¡£¶àÓÃlook bookÖ¸Áî
+ÒÔÈ·¶¨ÄÄ¼¸±¾ÊéÊÇ¿ÉÒÔºÏ²¢µÄ£¬ºÏ²¢ºóµÄ½±Àø»á¸ü´ó¡£
+l sdxl
+ÉñÊéÖ®Ò»,ÈôÊÇÄÜÕÒÆëÉäµñÓ¢ÐÛ´«ºÍÒÐÌìÍÀÁú¼Ç¾ÍÄÜ(combine)¡£
+
+Èç¹ûÕâÊ±ÄãÊÖÖÐÓÐÉñµñÏÀÂÂ£¬ÉäµñÓ¢ÐÛ´«£¬ÒÐÌìÍÀÁú¼ÇÈý±¾Êé£¬
+¾Í¿ÉÒÔÓÃcombineÖ¸Áî,²»Í¬µÄÊéÓÐ²»Í¬µÄºÏ²¢Ö¸Áî¡£
+combine
+Äã°Ñ´Ó»³ÖÐ·­³öµÄÉäµñÓ¢ÐÛ´«ºÍÒÐÌìÍÀÁú¼ÇÁ½±¾ÉñÊé£¬ºÍÊÖÖÐ
+µÄÉñµñÏÀÂÂºÏ²¢³ÉÁËÒ»±¾¡£
+
+´ËÊ±ÄãÉíÉÏ»á³öÏÖÒ»±¾ÉäµñÈý²¿Çú(Book)£¬ÄãÓÃ²éÔÄ(chayue)
+Ö¸Áî¿ÉÒÔ¶ÔÆä½øÐÐ²éÔÄ²¢µÃµ½ÏàÓ¦½±Àø¡£
+
+Áí¸½£º¼¸±¾¿ÉÒÔºÏ²¢µÄÉñÊéµÄÃû³ÆºÍºÏ²¢ÃüÁî¡£
+1¡£ÉñµñÏÀÂÂ£¬ÉäµñÓ¢ÐÛ´«£¬ÒÐÌìÍÀÁú¼Ç     combine
+2¡£Â½Ð¡·ç£¬²·Ó¥´«Ææ£¬ÏãË§´«Ææ	      zhuang
+3¡£Ô²ÔÂÍäµ¶£¬ÈýÉÙÒ¯µÄ½£	  	      zhuangding
+4¡£·çÔÆµÚÒ»µ¶£¬·çÁåÖÐµÄµ¶Éù£¬	      zu
+   ±ß³ÇÀË×Ó£¬ÌìÑÄÃ÷ÔÂµ¶	    
+5¡£½£Æø³¤½­£¬Á½¹ãºÀ½Ü£¬		      hebing
+   Ó¢ÐÛºÃºº£¬½­É½Èç»­
+6¡£´³µ´½­ºþ£¬ÉñÖÝÎÞµÐ£¬	 	      redo
+   ¼ÅÄ¯¸ßÊÖ£¬ÌìÏÂÓÐÑ©
+7¡£·ÉºüÍâ´«£¬Ñ©É½·Éºü		      ping
+8¡£(1)½ðÓ¹È«¼¯ÉÏ²á
+Ðè:
+Ð¦°Á½­ºþ£¨xajh£©
+Êé½£¶÷³ðÂ¼£¨sjec£©
+ÉñµñÏÀÂÂ£¨sdxl£©
+ÏÀ¿ÍÐÐ£¨xkx£©
+ÒÐÌìÍÀÁú¼Ç£¨yttlj£©
+±ÌÑª½££¨bxsword£©
+Ô§Ñìµ¶£¨yyblade£©
+ÕÒÈ«ºóÓÃ:he jinbookaºó»ñµÃ½ðÓ¹È«¼¯ÉÏ²á(¿ÉÒÔchayue)
+  (2)½ðÓ¹È«ÈºÏÂ²á
+Ðè:
+·ÉºüÍâ´«£¨fhwz£©
+Ñ©É½·Éºü£¨xsfh£©
+Á¬³Ç¾ö£¨lcjue£©
+ÌìÁú°Ë²¿£¨tlbb£©
+ÉäµñÓ¢ÐÛ´«£¨sdyxz£©
+°×ÂíÐ¥Î÷·ç£¨bmxxfeng£©
+Â¹¶¦¼Ç£¨ldji£©
+ÕÒÈ«ºóÓÃ:he jinbookbºó»ñµÃ½ðÓ¹È«¼¯ÏÂ²á(¿ÉÒÔchayue)
+ÈôÄÜÕÒµ½½ðÓ¹È«¼¯ÉÏÏÂ²á¾ÍÄÜÓÃtry jin bookaÀ´»ñµÃ
+½ðÓ¹È«¼¯
+(¿ÉÒÔchayue,»ñµÃ£¬3 ¿Å¾Å×ª½ðµ¤)
+(±¾ÈÎÎñµ¥¶À²»¿ÉÄÜÍê³É,3 ¿Å¾Å×ª½ðµ¤¿ÉÒÔ´ó¼Ò·Ö×Å³Ô)
+
+9¡£¹ÅÁú¾«Ñ¡¼¯ÉÏ²á
+Ðè:
+¾ø´úË«½¾£¨juedsj£©
+ðÐðÄ´«Ææ£¨ywcq£©
+´óÈËÎï£¨drwu£©
+ÏãË§´«Ææ£¨xscq£©
+²·Ó¥´«Ææ£¨bycq£©
+Â½Ð¡·ç´«Ææ£¨luxf£©
+Ô²ÔÂÍäµ¶£¨wandao£©
+ÕÒÈ«ºóÓÃ:he gulongbookaºó»ñµÃ¹ÅÁú¾«Ñ¡¼¯ÉÏ²á(¿ÉÒÔchayue)
+
+¹ÅÁú¾«Ñ¡¼¯ÏÂ²á
+Ðè:
+·çÔÆµÚÒ»µ¶£¨fyblade£©
+°×ÓñÀÏ»¢£¨tiger£©
+ÌìÑÄÃ÷ÔÂµ¶£¨skyblade£©
+±ß³ÇÀË×Ó£¨bclangzi£©
+·çÁåÖÐµÄµ¶Éù£¨fengling£©
+ÈýÉÙÒ¯µÄ½££¨xiesword£©
+ä½»¨Ï´½£Â¼£¨swordlu£©
+ÕÒÈ«ºóÓÃ:he gulongbookbºó»ñµÃ¹ÅÁú¾«Ñ¡¼¯(¿ÉÒÔchayue)
+ÈôÄÜÕÒµ½¹ÅÁú¾«Ñ¡¼¯ÉÏÏÂ²á¾ÍÄÜÓÃtry gulong bookaÀ´»ñµÃ
+¹ÅÁú¾«Ñ¡¼¯
+(¿ÉÒÔchayue,»ñµÃ£¬3 ¿Å¾Å×ª½ðµ¤)
+(±¾ÈÎÎñµ¥¶À²»¿ÉÄÜÍê³É,3 ¿Å¾Å×ª½ðµ¤¿ÉÒÔ´ó¼Ò·Ö×Å³Ô)
+
+ÎÞ×ÖÉñÊé
+
+Èç¹ûÄÜÍ¬Ê±»ñµÃ½ðÓ¹È«¼¯ºÍ¹ÅÁú¾«Ñ¡¼¯
+¾ÍÄÜÓÃtry jin bookÀ´»ñµÃÎÞ×ÖÉñÊé
+(¿ÉÒÔchayue,»ñµÃ£¬8 ¿Å¾Å×ª½ðµ¤µÄ×î¸ß½±Àø)
+(±¾ÈÎÎñµ¥¶À²»¿ÉÄÜÍê³É,8 ¿Å¾Å×ª½ðµ¤¿ÉÒÔ´ó¼Ò·Ö×Å³Ô)
+³ýÁË8 ¿Å¾Å×ª½ðµ¤µÄ×î¸ß½±ÀøÍâ£¬´ò¿ªÊéµÄÈË
+»¹»áËæ»ú¼ÓÒ»µã»ù±¾ÊôÐÔ¡££¨±ÛÁ¦£¬ÎòÐÔ£¬ËÙ¶È£¬
+¸£Ôµ£¬¸ù¹Ç,ÈÝÃ²ÖÐµÄÒ»ÖÖ,ÉÏÏÞÎª30£©
+
+10¡£ÏôÇïË®´«ÆæÉÏ²á				try
+   ÏôÇïË®´«ÆæÏÂ²á	
+ÁíÐè:  ËÄ´óÃû²¶ºÍÌÆ·½Ò»Õ½
+µÚ8ÖÖºÏ²¢³öÀ´µÄ¡¶ÏôÇïË®´«Ææ¡·³ýÁË¼Ó¾­ÑéºÍÇ±ÄÜºÍ½­ºþ
+ÔÄÀúÍâ£¬»¹»áËæ»ú¼ÓÒ»µã»ù±¾ÊôÐÔ¡££¨±ÛÁ¦£¬ÎòÐÔ£¬ËÙ¶È£¬
+¸£Ôµ£¬¸ù¹ÇÖÐµÄÒ»ÖÖ,ÉÏÏÞÎª25£©
+
+ÆäËü£º»áÓÐÒ»»ïÉñÃÜ×éÖ¯µÄÈËÀ´ºÍÍæ¼ÒÇÀÉñÊé£¬ËûÃÇ
+»¯×°³ÉÆ½Ãñ°ÙÐÕ£¬»ìÔÚ¸÷µØ£¬ÓÐÉñÊé³öÏÖ¾ÍÇ°È¥ÕùÇÀ¡£
+µÈËûÃÇÊ±»ú³ÉÊìÊ±£¬¾Í»á°ÑÉñÊé½»¸øÉñÃÜ×éÖ¯¡£Íæ¼Ò
+½«µÃ²»µ½ÉñÊé¡£
+ ÌáÊ¾£º1.Õâ»ïÈËÒ»°ã»á×°³ÉÆ½ÃñÈçÁ÷Ã¥Í·Ö®ÀàµÄ¡£
+      2.Õâ»ïÈË£¬»á×ßÀ´×ßÈ¥ÕÒÉñÊé£¬¸ÉµôÕâÑùµÄÈË£¬¾ÍÄÜµÃµ½ËûÉíÉÏµÄÉñÊé¡£
+      3.Õâ»ïÈË£¬Ò»°ã»áÔÚ30·ÖÖÓ×óÓÒ£¬Íê³ÉÉñÊéÈÎÎñ¡£
+ÏµÍ³»áÌáÊ¾ Ä³ÈË£ºXXXXÉñÊéÎÒÒÑ¾­ÄÃµ½ÊÖÁË¡£¡£¡£³·!!
+				          Êé½£II¹¤×÷ÊÒ
+[33m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[2;37;0m

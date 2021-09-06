@@ -1,0 +1,97 @@
+// This program is a part of NITAN MudLIB
+
+#include <ansi.h>
+#include <combat.h>
+
+#define YAN "「" HIR "天寰神炎" NOR "」"
+
+inherit F_SSERVER; 
+string perform_name(){ return HIR"天寰神炎"NOR; }
+int perform(object me, object target)
+{
+        object weapon;
+        string msg;
+        int lvl,damage;
+        
+        if (! target) target = offensive_target(me); 
+        
+        if (! target || ! me->is_fighting(target)) 
+                return notify_fail(YAN "只能在战斗中对对手使用。\n");
+         
+        if (me->query_temp("weapon") )
+                return notify_fail("你必须空手才能施展" YAN "。\n");
+         
+        if (me->query_skill("force") < 200) 
+                return notify_fail("你的内功的修为不够，无法施展" YAN "。\n");
+        
+        if (me->query_skill("huoyan-dao", 1) < 150) 
+                return notify_fail("你的火焰刀修为不够，无法施展" YAN "。\n");
+         
+        if (me->query("neili") < 600 || me->query("max_neili") < 2000) 
+                return notify_fail("你的真气不够，无法施展" YAN "。\n");
+
+        if (me->query_skill_mapped("strike") != "huoyan-dao") 
+                return notify_fail("你没有激发火焰刀，无法施展" YAN "。\n");
+
+        if (me->query_skill_prepared("strike") != "huoyan-dao")
+                return notify_fail("你没有准备火焰刀，无法施展" YAN "。\n");
+
+       
+ if (me->query_skill("xuedao-jing", 1) > 1) 
+return notify_fail("你修炼血刀经与" YAN "义理相悖，不能施展。\n");
+        if (! living(target))
+               return notify_fail("对方都已经这样了，用不着这么费力吧？\n");
+
+        msg = HIR "$N" HIR "一声怒嚎，狂催真气注入单掌，掌缘顿时腾起一道烈炎，接二连三朝$n"
+              HIR "劈去。\n" NOR;
+
+
+
+ msg += COMBAT_D->damage_msg(damage,"割伤");
+        message_vision(msg, me, target);
+me->set_temp("yan",1);
+
+COMBAT_D->report_status(target, 2);
+
+ lvl = me->query_skill("huoyan-dao",1);
+if (lvl > 600) lvl =600;
+damage = lvl*4;
+        me->add("neili", -500);
+if(random(10)>6 && lvl > 350) {
+target->set_temp("must_be_hit",1);
+target->start_busy(random(4));
+}
+target->start_busy(1);
+    target->start_busy(random(4));    
+
+me->add_temp("apply/party", lvl);
+ me->add_temp("apply/dodge", lvl);
+me->add_temp("apply/attack", lvl);
+me->add_temp("apply/damage", lvl);
+ 
+        COMBAT_D->do_attack(me, target, weapon, 3);
+
+      if( me->is_fighting(target) )  
+        COMBAT_D->do_attack(me, target, weapon, 3);
+
+       if( me->is_fighting(target) ) 
+        COMBAT_D->do_attack(me, target, weapon, 3);
+
+        if( me->is_fighting(target) )
+        COMBAT_D->do_attack(me, target, weapon, 3);
+
+       if( me->is_fighting(target) ) 
+        COMBAT_D->do_attack(me, target, weapon, 3);
+
+        me->start_busy(2 + random(2));
+me->start_perform(3,"「天寰神炎」");
+  target->delete_temp("must_be_hit");
+me->add_temp("apply/party", -lvl);
+ me->add_temp("apply/dodge", -lvl);
+me->add_temp("apply/attack", -lvl);
+me->add_temp("apply/damage", -lvl);
+me->delete_temp("yan");
+        return 1;
+}
+
+

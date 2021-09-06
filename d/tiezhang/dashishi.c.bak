@@ -1,0 +1,114 @@
+// Room: /u/bobo/tiezhang/dashishi.c
+
+inherit ROOM;
+#include <ansi.h>
+#define QUESTDIR "quest/tzautopfm/"
+
+
+void create()
+{
+	set("short", "大石室");
+	set("long", @LONG
+四周石壁上火把在燃烧着，墙角四周放满了大铁箱，打开一看，都是珠宝
+黄金。中间架子上供着二件宝兵器，其一宛如一条金龙盘旋着，其二宛如一片
+火红的云朵飘浮在空中。
+LONG
+	);
+
+	set("exits", ([ 
+"out" : __DIR__"taijie-2",
+]));
+        set("objects", ([
+        __DIR__"obj/jia2" : 1,
+        ]));
+	set("no_clean_up", 0);
+
+	setup();
+}
+
+
+void init()
+ {
+     object me = this_player();
+
+
+     if(me->query(QUESTDIR+"combat_exp") && me->query("combat_exp")-me->query(QUESTDIR+"combat_exp")<100000)
+       { 
+      message_vision( HIW "$N看到兵器架上的武器，忽然若有所思。\n"NOR,me);
+      message_vision( HIW "$N想了半天，没想起什么来，不由得摇了摇头。\n"NOR,me);
+
+        }
+     
+else
+      { if ( me->query("quest/tzauto/pass",1) 
+            && me->query("combat_exp")>= 4500000 
+            && me->query_skill("yingou-bifa",1) > 350
+            && me->query_skill("lietian-fu",1) > 350
+            && me->query_skill("liuye-daofa",1) > 350
+            && me->query_skill("tiezhang-zhangfa",1) >350 
+            && !me->query("quest/tzauto/over")  
+            && random(me->query("kar")) >0 ) 
+           
+                {  
+       message_vision( HIW "$N看到兵器架上的武器，忽然想起当日慈恩所使用的掌法。\n"NOR,me);
+       message_vision( HIR "$N心下思忖道：所谓招式，无非是发力之技巧，或以快打慢，或以长搏短，\n", me);
+       message_vision( "              兵器与否，无非是掌力不能及远，肉掌不若神兵之利耳。\n",me);
+       message_vision( "$N不由得陷入了沉思中。。 \n"NOR, me);
+       me->set(QUESTDIR+"time",time());
+       me->set(QUESTDIR+"combat_exp",me->query("combat_exp"));
+       me->start_busy(3);               
+       remove_call_out("thinking");
+		 call_out("thinking",5, me );
+       
+                }
+       }            
+ }
+
+
+
+int thinking(object me)
+{
+  int i;
+  if(!me) return 0;
+	
+  if(me->query_temp("try_auto")<(3+random(3)))
+    { me->add_temp("try_auto",1);
+          if(random(2)) tell_object(me,HIG"\n你用手掌比划着柳叶刀和裂天斧的招式,只觉得头脑发昏...\n"NOR);
+             else tell_object(me,HIY"\n突然间，你似乎抓到了什么...\n"NOR);
+	  tell_room(environment(me),HIC""+me->query("name")+"似乎在思索着什么，手里胡乱比划着。\n"NOR, ({}));
+	  remove_call_out("thinking");
+	  call_out("thinking",3+random(3), me);
+	}
+  else
+   {
+      me->delete_temp("try_auto");
+      i=random(10);
+     
+     if(i > 0 && random(me->query("kar"))>0)
+     {
+       tell_object(me,HIG"\n你一掌挥出，去势轻灵，宛若天成！却是一招柳叶刀法！\n"NOR);
+       tell_object(me,HIW"\n你一掌挥出，中途忽然骈指如笔，写了个大大的“武“字！却是一招银钩笔法！\n"NOR);
+
+       message_vision(HIC"\n$N「哈哈哈」大笑几声，说道：“原来如此，原来如此。”\n"NOR,me); 
+       tell_object(me,HIR"你成功的把铁掌武技融入了铁掌掌法中！\n"NOR);
+       me->set("quest/tzauto/over",1);
+       log_file("quest/tzautopfm", sprintf("%s(%s) 失败%d次成功融合了铁掌武技。富源：%d；经验：%d。",        me->name(1),me->query("id"), me->query(QUESTDIR+"fail"),me->query("kar"),me->query("combat_exp")) );
+     }
+    else
+    {
+       tell_object(me,HIG"\n你沉思许久，不得要领。\n"NOR);
+       message_vision(HIC"\n$N摇了摇头，深深地叹了口气。\n"NOR,me); 
+       me->add(QUESTDIR+"fail",1);
+       log_file("quest/tzautopfm", sprintf("%s(%s) 融合铁掌武技失败：%d次。富源：%d；经验：%d。",        me->name(1),me->query("id"), me->query(QUESTDIR+"fail"),me->query("kar"),me->query("combat_exp")) );
+    }
+  }
+
+}
+
+
+
+
+
+
+
+

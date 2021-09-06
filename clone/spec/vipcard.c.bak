@@ -1,0 +1,75 @@
+//modified by action 2009/2/17
+#include <ansi.h>
+
+inherit SPEC; 
+
+void create()
+{
+        set_name (HIR"荣誉贵宾卡(限时)"NOR, ({ "vipcard"}));
+	set("long","这是一张书剑专用的"HBRED"贵宾充值卡"NOR"，可以用来给书剑的玩家进行充值("HIY"credit vip"NOR")。\n");
+
+	set("unit","张");
+	set_weight(200);
+        set("value",3000000);
+  set("no_drop",1);	
+  set("no_get",1);
+        set("no_give",1);
+	set("degree",1);
+	
+//	set("no_cun",1);
+	set("flag","spec/vipc");
+        set("desc","终身贵宾VIP凭证");
+  set("credit",50000);       
+	setup();
+}
+
+void init()
+{
+	add_action("do_credit","credit");
+  
+}
+
+int do_credit(string arg)
+{
+	object me=this_player();
+	    
+	if (!arg)
+      		return notify_fail("你要充值什么?\n");
+      		
+	if (arg!="vip")
+      		return notify_fail("你要充值什么?\n");     	      		
+        if (me->query("buyvip"))
+                return notify_fail("您已经是终身荣誉贵宾了，恭喜你再也用不了了，存到仓库当纪念品吧。\n");                          
+
+
+me->set("registered", 3);    
+me->set("vip/vip_start_time",time());    
+me->set("vip/vip_time",time());       
+
+me->add("vip/vip_time",365*24*3600);
+// me->add("SJ_Credit",3000);
+// me->add("balance",20000000);
+me->set("buyvip",1);
+me->set("y-card-vip",5);
+
+	write(HIY"\n你将"HIW"贵宾充值卡"NOR+HIY"往书剑自动收款机里一刷\n"NOR);
+	
+   //     write(HIY"\你的书剑通宝增加了三仟个。\n"NOR);
+   //     write(HIY"\n你的银行存款增加了贰千两。\n"NOR);
+
+        write(HIW"\n书剑自动系统为您增加三百六十五天的贵宾VIP，目前等级为"HIR"终身荣誉贵宾"HIW",请输入"HIB"time"HIW"查看。\n"NOR);
+  
+
+if(me->query("combat_exp")>=7500000 && !me->query("5m_jiangli") )
+{
+     me->add("relife/gifts/now",  2);  
+     me->add("relife/gifts/total",  2);  
+        write(HIR"\n鉴于您已经超过了“贵宾专享”礼物的领取区间，系统自动追加给您2点自由天赋。\n"NOR);
+     me->set("last_full",1);
+     me->set("5m_jiangli",1);
+}
+      write(HIW"\n恭喜你荣升书剑2012站终身荣誉贵宾，感谢您对书剑的支持。\n\n"NOR);
+
+	degree();
+	return 1;
+}	 

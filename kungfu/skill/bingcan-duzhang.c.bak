@@ -1,0 +1,208 @@
+// bingcan-duzhang.c  冰蚕毒掌
+
+#include <ansi.h>
+
+inherit SKILL;
+
+mapping *action = ({
+([      "action": "$N前後左右四掌迅捷之极劈出冰蚕毒掌，$n只觉$N内力既强，劲道阴寒，怪异之极，而且蕴有剧毒",
+        "dodge" : 21,
+        "attack": 500,
+        "parry" : 37,
+        "dmage" : 52,
+        "force" : 430,
+        "damage_type": "瘀伤"
+]),
+([      "action": "$N左手凌空劈出，右掌跟着迅捷之极地劈出，左手掌力先发后至，右手掌力后发先至，两股力道交错而前，诡异之极",
+        "dodge" : 22,
+        "attack": 500,
+        "parry" : 34,
+        "dmage" : 67,
+        "force" : 490,
+        "damage_type": "瘀伤"
+]),
+([      "action": "$N踏上一步，呼呼呼呼，连出四掌，每出一掌，便跨上一步，五步一踏出，已与$n面面相对",
+        "dodge" : 24,
+        "attack": 500,
+        "parry" : 10,
+        "dmage" : 82,
+        "force" : 530,
+        "damage_type": "瘀伤"
+]),
+([      "action": "$N右掌用力挥出，这一掌来势劲力大得异乎寻常，$n不由得寒气袭体，大为难当",
+        "dodge" : 28,
+        "attack": 500,
+        "parry" : 36,
+        "dmage" : 95,
+        "force" : 580,
+        "damage_type": "瘀伤"
+]),
+([      "action": "$N右掌立即拍出，一股阴寒之气随伴着掌风直逼$n，$n感到寒气袭体，说不出的难受",
+        "dodge" : 27,
+        "attack": 500,
+        "parry" : 21,
+        "dmage" : 105,
+        "force" : 640,
+        "damage_type": "瘀伤"
+]),
+});
+
+int valid_enable(string usage) 
+{ 
+if ( this_player()->query("quest/bingcan/pass") )
+
+ return usage=="strike" || usage=="parry"; 
+}   
+
+int valid_learn(object me)
+{
+	if ((int)me->query_skill("yijinjing", 1) < 0)
+		return notify_fail("你所修的内功无法练冰蚕毒掌。\n");
+
+	if ((int)me->query_skill("force") < 200)
+		return notify_fail("你的内功火候不够，无法练冰蚕毒掌。\n");
+
+	if ((int)me->query("max_neili") < 3000)
+		return notify_fail("你的内力太弱，无法练冰蚕毒掌。");
+
+	if ((int)me->query_skill("strike", 1) < (int)me->query_skill("bingcan-duzhang", 1))
+		return notify_fail("你的基本掌法水平有限，无法领会更高深的冰蚕毒掌。\n");
+
+	if ((int)me->query_skill("yijinjing", 1) < (int)me->query_skill("bingcan-duzhang", 1))
+		return notify_fail("你的神足经神功水平有限，无法领会更高深的冰蚕毒掌。\n");
+
+	return 1;
+}
+
+string query_skill_name(int level)
+{
+	int i;
+	for(i = sizeof(action)-1; i >= 0; i--)
+	if(level >= action[i]["lvl"])
+		return action[i]["skill_name"];
+}
+
+mapping query_action(object me)
+{
+	int i, j, level;
+	level = me->query_skill("bingcan-duzhang",1);
+
+	for(i = sizeof(action); i > 0; i--){
+		if(level > action[i-1]["lvl"]){
+			j = NewRandom(i, 20, level/5);
+
+
+			if( me->query_temp("bcdz_pfm")) {
+				return ([
+					"action" :	BBLU+HIW+action[j]["action"]+NOR,
+					//"poison":	action[j]["poison"],
+					"damage_type":	action[j]["damage_type"],
+					"dodge":	random(55),
+					"parry":	random(55),
+					"force":	450 + random(450),
+					"damage":	450 + random(450),
+				]);
+			}
+			return ([
+				"action":	action[j]["action"],
+				"damage_type":	action[j]["damage_type"],
+				//"poison":	action[j]["poison"],
+				"lvl":		action[j]["lvl"],
+				"dodge":	random(30),
+				"parry":	random(30),
+				"force":	300 + random(350),
+				"damage" : 50 + random(50),
+			]);
+		}
+	}
+}
+
+
+int practice_skill(object me)
+{
+	if ((int)me->query("qi") < 40)
+		return notify_fail("你的体力太低了。\n");
+
+	if ((int)me->query("neili") < 30)
+		return notify_fail("你的内力不够练冰蚕毒掌。\n");
+
+	if (me->query_skill("bingcan-duzhang", 1) < 50){
+		me->receive_damage("jingli", 40);
+		me->add("neili", -15);
+	}
+	else
+	{ 
+		me->receive_damage("jingli", 50);
+		me->add("neili", -55);
+	}
+	return 1;
+}
+
+mixed hit_ob(object me, object victim, int damage_bonus)
+{
+	int lvl = me->query_skill("bingcan-duzhang"), lb;
+	lb = random(10);
+    
+	//if( !me->query_temp("bcdzauto")  && (lb > 2)  )
+	if( !me->query_temp("bcdzauto")   )
+	{  
+		if ( random(100) > 50) 
+		{
+
+			//call_out("pfm_quto", 0, me, victim);
+              
+		}
+		if (random(me->query_str()) > victim->query_str()/2)
+		{
+			message_vision(HIW "$N趁机踏步上前，向$n面门前虚晃一招，$n还未抵挡，不料后招又至，正中$n小腹。\n" NOR,me,victim);
+			message_vision(WHT "$n只觉丹田中真气似被冻结一般，无法凝聚，顿时出了一身冷汗。\n" NOR,me,victim);
+			me->set_temp("bcdzauto", 1);
+			victim->add("jing",- lvl); 
+			victim->add("neili",- lvl); 
+			victim->add("jingli",- lvl); 
+			victim->apply_condition("no_perform", 2+ random(2));
+			victim->apply_condition("no_exert", 2+ random(2));
+			victim->add_condition("bingcan_poison", 20);
+			victim->add_busy(1+random(2));
+			me->delete_temp("bcdzauto");
+		}
+	}
+
+}
+/*
+void pfm_quto(object me, object victim)
+{
+	string msg;
+	if (!me || !victim || !me->is_fighting(victim))
+		return;
+
+	if ( me->query_temp("weapon")) return;
+
+	i = 1+random(4);
+	switch(random(1)){
+		case 0 :
+			msg = BLU+BWHT "\n眼见$n越战越勇，$N却丝毫不放在心上，抽空之间平平挥出一招，\n"
+                     "$n见来势怪异，掌风中竟夹杂着扑鼻的腥气，不禁打了个冷战。 \n"NOR; 
+			message_vision(msg, me, victim);
+			me->set_temp("bcdz_pfm", 1);
+			me->add_temp("apply/attack",  me->query_skill("bingcan-duzhang", 1));
+			me->add_temp("apply/strike",  me->query_skill("bingcan-duzhang", 1));
+
+			COMBAT_D->do_attack(me, victim, me->query_temp("weapon"), 3);
+
+			me->add_temp("apply/attack", -me->query_skill("bingcan-duzhang", 1));
+			me->add_temp("apply/strike", -me->query_skill("bingcan-duzhang", 1));
+			me->delete_temp("bcdz_pfm"); 
+			victim->start_lost(2+random(2));
+			break;
+	}
+}*/
+
+string perform_action_file(string action)
+{
+    return __DIR__"bingcan-duzhang/" + action;
+}
+
+/*
+游坦之待要招架，拳力已及面门，总算他勤练《神足经》后，体内自然而然地生出反应，脑袋向后急仰，两个空心筋斗向后翻出，这才在间不容发之际避开了这千钧一击。
+*/

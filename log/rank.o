@@ -1,0 +1,6 @@
+#/cmds/usr/top.c
+score_ranks ({(["eoh":9049,"exp":49662067,"family":"天龙寺","time":1402022032,"id":"llqq","score":282675,"name":"本王",]),(["eoh":12950,"exp":48927202,"family":"天龙寺","time":1402022037,"id":"ljyljy","score":186543,"name":"本皇",]),(["eoh":4789,"exp":25382324,"family":"姑苏慕容","id":"group","time":1402020284,"score":459,"name":"慕容果然",]),})
+beauty_ranks ({(["family":"桃花岛","time":1400838929,"id":"xingyun","score":955,"name":"星云风",]),(["family":"丐帮","time":1400838820,"id":"myqml","score":841,"name":"玉玲珑",]),})
+pk_ranks ({(["family":"嵩山派","time":1382618656,"id":"gmid","score":341,"name":"惠龙又",]),})
+rich_ranks ({(["family":"天龙寺","time":1402022032,"id":"llqq","score":1516,"name":"本王",]),})
+worker_ranks ({(["family":"天龙寺","time":1402022037,"id":"ljyljy","score":221,"name":"本皇",]),})
