@@ -160,7 +160,11 @@ int valid_read(string file, mixed user, string func)
 {
 	string euid, status, *path, dir;
 	int i;
-
+	// debug_message("V----valid_read----V");
+	// debug_message("file:" + file);
+	// debug_message("user:" + user);
+	// debug_message("func:" + func);
+	// debug_message("--------------------");
 	if (this_player())
 		user = this_player();
 
@@ -172,6 +176,7 @@ int valid_read(string file, mixed user, string func)
 		case "stat":
 			return 1;
 	}
+	return 1;
 	// Get the euid and status of the user.
 	euid = geteuid(user);
 	if (!euid)

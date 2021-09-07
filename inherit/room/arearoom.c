@@ -3,7 +3,7 @@
 // in any form without the written permission from authors.
 // arearoom.c
 
-#pragma save_binary
+// #pragma save_binary
 
 #include <ansi.h>
 

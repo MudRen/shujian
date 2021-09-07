@@ -1,6 +1,6 @@
 // room.c Modify by Yu Jue 1998-3-16
 
-#pragma save_binary
+// #pragma save_binary
 
 #include <dbase.h>
 #include <room.h>

@@ -112,11 +112,11 @@ void gb_big5(string arg, object ob)
 {
 	if (lower_case(arg)[0] == 'y')
 		ob->set_temp("big5", 1);
-	if (BAN_D->is_banned(query_ip_number(ob))) {
-		write("对不起，您的地址在" + MUD_NAME + "不受欢迎。\n");
-		destruct(ob);
-		return;
-	}
+	// if (BAN_D->is_banned(query_ip_number(ob))) {
+	// 	write("对不起，您的地址在" + MUD_NAME + "不受欢迎。\n");
+	// 	destruct(ob);
+	// 	return;
+	// }
 	write(sprintf("\n%76|s\n%76|s\n%s", MUD_NAME, "- " __VERSION__ " -", welcome_msg));
 	write("本站总共访问人次：" HIY + chinese_number(ppls) + NOR "\n");
 	UPTIME_CMD->main(1);
@@ -149,11 +149,11 @@ private void get_id(string arg, object ob)
 		return;
 	}
 */
-	if ("/cmds/usr/blacklist"->is_black(arg)) {
-		write("很遗憾，你是黑名单中的人物，请等待处理结果。\n");
-		destruct(ob);
-		return;
-	}
+	// if ("/cmds/usr/blacklist"->is_black(arg)) {
+	// 	write("很遗憾，你是黑名单中的人物，请等待处理结果。\n");
+	// 	destruct(ob);
+	// 	return;
+	// }
 
 	if (ob->set("id", arg) != arg) {
 		write("Failed setting user name.\n");

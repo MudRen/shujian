@@ -4,7 +4,7 @@
 
 // Modified by mxzhao 2004/04/28 for add "env/wimpycmd"
 
-#pragma save_binary
+// #pragma save_binary
 
 #include <action.h>
 #include <ansi.h>

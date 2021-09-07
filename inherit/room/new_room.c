@@ -3,7 +3,7 @@
 // original place, when it refreshes.
 // 1998-02-13, @jyqxz
  
-#pragma save_binary
+// #pragma save_binary
 
 #include <dbase.h>
 #include <room.h>

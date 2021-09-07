@@ -1,2 +1,5 @@
 *
 !.gitignore
+!nosave
+!static
+!wiz
