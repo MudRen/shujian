@@ -578,7 +578,7 @@ private void get_email(string email, object ob, mapping my)
 	object user;
 
 	write("\n");
-	if (email == "" || strsrch(email, "@") < 2) {
+	if (email == "" || strsrch(email, "@") < 1) {
 		write("电子邮件地址必须是 id@address 的格式。\n");
 		write("您的电子邮件地址：");
 		input_to("get_email", ob, my);
